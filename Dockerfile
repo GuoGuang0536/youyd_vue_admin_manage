@@ -9,6 +9,7 @@ RUN apt-get install python
 
 WORKDIR '/app'
 COPY ./package.json ./
+RUN npm config set strict-ssl false
 RUN npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
 RUN npm --registry=https://registry.npm.taobao.org install
 RUN npm install
